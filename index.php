@@ -13,7 +13,7 @@
             <select name="ear_type"><option>Human Ears</option><option>Cat Ears</option><option>Dog Ears</option><option>Horns</option><option>Other</option></select>
             <input type="text" name="weapons" class="input-small" placeholder="Weapons">
             <div class="form-actions">
-                <button class="btn" id="submit_button" type="submit">Submit</button>
+                <button class="btn btn-primary" id="submit_button" type="submit">Submit</button>
             </div>
           </form>
         </div>
