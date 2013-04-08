@@ -7,13 +7,12 @@
     <form action="create.php" method="post" enctype="multipart/form-data" class="form" id="createForm">
       <input type="text" name="character_name" class="input-large" placeholder="Name" required>
       <input type="text" name="alias" class="input-large" placeholder="Alias">
-      <input type="text" name="gender" class="input-large" placeholder="Gender" required>
-      <input type="text" name="approx_age" class="input-large" placeholder="Apparent Age" required>
+      <select name="gender"><option>Male</option><option>Female</option></select>
+      <select name="approx_age"><option>Baby</option><option>Todler</option><option>Child</option><option>Teen</option><option>Adult</option><option>Senior</option></select>
       <input type="text" name="hair_colour" class="input-large" placeholder="Hair Colour" required>
-      <input type="text" name="hair_length" class="input-large" placeholder="Hair Length" required>
+      <select name="hair_length"><option>Hair Above Ears</option><option>Hair Below Ears</option><option>Hair Below Shoulders</option><option>Hair Below Waist</option></select>
       <input type="text" name="eye_colour" class="input-large" placeholder="Eye Colour" required>
-      <input type="text" name="ear_type" class="input-large" placeholder="Ear Type" required>
-      <input type="text" name="body_type" class="input-large" placeholder="Body Type" required>
+      <select name="ear_type"><option>Human Ears</option><option>Cat Ears</option><option>Dog Ears</option><option>Horns</option><option>Other</option></select>
       <input type="text" name="anime" class="input-large" placeholder="Anime">
       <input type="text" name="weapons" class="input-large" placeholder="Weapons">
       <textarea class="input-block-level" name="description" rows="16" placeholder="Character Description (Put some effort into it)" required></textarea>
@@ -43,7 +42,6 @@
   if (isset($_POST['hair_length'])) {$hairLength = $_POST['hair_length'];}
   if (isset($_POST['eye_colour'])) {$eyeColour = $_POST['eye_colour'];}
   if (isset($_POST['ear_type'])) {$earType = $_POST['ear_type'];}
-  if (isset($_POST['body_type'])) {$bodyType = $_POST['body_type'];}
   if (isset($_POST['anime'])) {$anime = $_POST['anime'];}
   if (isset($_POST['weapons'])) {$weapons = $_POST['weapons'];}
   if (isset($_POST['description'])) {$description = addslashes($_POST['description']);}
@@ -62,7 +60,7 @@
   {
 
     // Post Character Data    
-    $result = "INSERT INTO characters (character_name, alias, gender, approx_age, hair_colour, hair_length, eye_colour, ear_type, body_type, anime, weapons, description) VALUES ('$name', '$alias', '$gender', '$age', '$hairColour', '$hairLength', '$eyeColour', '$earType', '$bodyType', '$anime', '$weapons', '$description')";
+    $result = "INSERT INTO characters (character_name, alias, gender, approx_age, hair_colour, hair_length, eye_colour, ear_type, anime, weapons, description) VALUES ('$name', '$alias', '$gender', '$age', '$hairColour', '$hairLength', '$eyeColour', '$earType', '$anime', '$weapons', '$description')";
 
     if (!mysqli_query($con,$result))
     {

@@ -5,13 +5,12 @@
       <div class="row">
         <div class="span12" id="form">
           <form action="searchcharacter.php" onsubmit="return false" method="post" class="form" id="searchForm">
-            <input type="text" name="gender" class="input-small" placeholder="Gender">
-            <input type="text" name="approx_age" class="input-small" placeholder="Apparent Age">
+            <select name="gender"><option>Male</option><option>Female</option></select>
+            <select name="approx_age"><option>Baby</option><option>Todler</option><option>Child</option><option>Teen</option><option>Adult</option><option>Senior</option></select>
             <input type="text" name="hair_colour" class="input-small" placeholder="Hair Colour">
-            <input type="text" name="hair_length" class="input-small" placeholder="Hair Length">
-            <input type="text" name="eye_colour" class="input-small" placeholder="Eye Colour">
-            <input type="text" name="ear_type" class="input-small" placeholder="Ear Type">
-            <input type="text" name="body_type" class="input-small" placeholder="Body Type">
+            <select name="hair_length"><option>Hair Above Ears</option><option>Hair Below Ears</option><option>Hair Below Shoulders</option><option>Hair Below Waist</option></select>
+            <input type="text" name="eye_colour" class="ut-small" placeholder="Eye Colour">
+            <select name="ear_type"><option>Human Ears</option><option>Cat Ears</option><option>Dog Ears</option><option>Horns</option><option>Other</option></select>
             <input type="text" name="weapons" class="input-small" placeholder="Weapons">
             <div class="form-actions">
                 <button class="btn" id="submit_button" type="submit">Submit</button>

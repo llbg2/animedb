@@ -12,7 +12,6 @@
 	$hairLength = $_POST['hair_length'];
 	$eyeColour = $_POST['eye_colour'];
 	$earType = $_POST['ear_type'];
-	$bodyType = $_POST['body_type'];
 	$weapons = $_POST['weapons'];
 
 	//Create Connection
@@ -43,10 +42,6 @@
 
 	if(!empty($earType)) {
 		$query = $query . " AND ear_type='$earType'";
-	}
-
-	if(!empty($bodyType)) {
-		$query = $query . " AND body_type='$bodyType'";
 	}
 
 	if(!empty($weapons)) {
