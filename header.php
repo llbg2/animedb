@@ -43,8 +43,8 @@
           <a class="brand" href="index.php">AnimeDB</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="index.php">Home</a></li>
-              <li><a href="create.php">Create</a></li>
+              <li <?php if ($page == "index_page") {echo "class='active'";} ?>><a href="index.php">Home</a></li>
+              <li <?php if ($page == "create_page") {echo "class='active'";} ?>><a href="create.php">Create</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

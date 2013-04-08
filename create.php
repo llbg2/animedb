@@ -1,3 +1,4 @@
+<?php $page = 'create_page'; ?>
 <?php require 'header.php'; ?>
 
 <div class="container">
