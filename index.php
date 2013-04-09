@@ -22,7 +22,7 @@
 
       <div class="row">
         <div class="span12" id="ajaxcontainer">
-            <div style="display:none; text-align:center;" id="dvloader"><img src="img/loading.gif" /></div>
+            <div style="display:none; text-align:center;" id="dvloader"><img src="img/loading.gif" height="48px" width="48px" /></div>
         </div>
       </div>
 
@@ -31,7 +31,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./resources/jquery.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="./resources/bootstrap-transition.js"></script>
     <script src="./resources/bootstrap-alert.js"></script>
     <script src="./resources/bootstrap-modal.js"></script>
@@ -55,6 +55,17 @@
         });
         return false; // prevent normal submit
       });
+
+        $("#ajaxcontainer").on("click", "tr" , function(event) {
+            var xid = $(this).children(".rowid").text();
+            $("#ajaxcontainer").hide("fast", function() {
+                $.post("character.php #ajax-container", { id: xid }, function(data) {
+                    $("#ajaxcontainer").html(data);
+                    $("#ajaxcontainer").show("fast");
+                })
+            })
+        });
+
     </script>
 
 </body></html>
