@@ -54,9 +54,9 @@
 		echo "<table class='table table-striped' ><thead><th>Image</th><th>Name</th><th>Anime</th></thead><tbody>";
 
 		while ($row = $STH->fetch()) {
-			echo "<tr><td><image height=140 width=140 src=getimage.php?id=" . $row['character_id'] . " </td>";
-			echo "<td>" . $row['character_name'] . "</td>";
-			echo "<td>" . $row['anime'] . "</td></tr>";
+			echo "<tr><td><a href=character.php?id=" . $row['character_id'] . "><image height=140 width=140 src=getimage.php?id=" . $row['character_id'] . "/></a></td>";
+			echo "<td><a href=character.php?id=" . $row['character_id'] . ">" . $row['character_name'] . "</a></td>";
+			echo "<td><a href=character.php?id=" . $row['character_id'] . ">" . $row['anime'] . "</a></td></tr>";
 		}
 
 		echo "</tbody></table>";
