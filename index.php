@@ -22,7 +22,7 @@
 
       <div class="row">
         <div class="span12" id="ajaxcontainer">
-
+            <div style="display:none; text-align:center;" id="dvloader"><img src="img/loading.gif" /></div>
         </div>
       </div>
 
@@ -47,8 +47,11 @@
 
     <script>
       $("form").submit(function() {
+        $("#dvloader").show();
         $.post($(this).attr("action"), $(this).serialize(), function(html) {
-            $("#ajaxcontainer").html(html);
+            $("#ajaxcontainer").html(html, function() {
+                $("#dvloader").hide();
+            });
         });
         return false; // prevent normal submit
       });
