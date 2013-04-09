@@ -33,40 +33,60 @@
 
   require 'config.php';
 
-  //Variables
-
-  if (isset($_POST['character_name'])) {$name = $_POST['character_name'];}
-  if (isset($_POST['alias'])) {$alias = $_POST['alias'];}
-  if (isset($_POST['gender'])) {$gender = $_POST['gender'];}
-  if (isset($_POST['approx_age'])) {$age = $_POST['approx_age'];}
-  if (isset($_POST['hair_colour'])) {$hairColour = $_POST['hair_colour'];}
-  if (isset($_POST['hair_length'])) {$hairLength = $_POST['hair_length'];}
-  if (isset($_POST['eye_colour'])) {$eyeColour = $_POST['eye_colour'];}
-  if (isset($_POST['ear_type'])) {$earType = $_POST['ear_type'];}
-  if (isset($_POST['anime'])) {$anime = $_POST['anime'];}
-  if (isset($_POST['weapons'])) {$weapons = $_POST['weapons'];}
-  if (isset($_POST['description'])) {$description = addslashes($_POST['description']);}
-
   if (isset($_FILES['image']['tmp_name'])) {$file = $_FILES['image']['tmp_name'];}
 
   //Create Connection
-  $con = mysqli_connect($host, $username, $password, $database);
+  $con = new mysqli($host, $username, $password, $database);
 
   //Check Connetion
-  if (mysqli_connect_errno($con)) {
+  if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    exit();
   }
 
   if (isset($_POST['character_name']))
   {
 
-    // Post Character Data    
+    // Post Character Data
+      // Create Prepared Statement
+      if ($stmt = $con->prepare("INSERT INTO characters (character_name, alias, gender, approx_age, hair_colour, hair_length, eye_colour, ear_type, anime, weapons, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+        $stmt->bind_param('sssssssssss', $name, $alias, $gender, $age, $hairColour, $hairLength, $eyeColour, $earType, $anime, $weapons, $description);
+
+        //Variables
+
+        if (isset($_POST['character_name'])) {$name = $_POST['character_name'];}
+        if (isset($_POST['alias'])) {$alias = $_POST['alias'];}
+        if (isset($_POST['gender'])) {$gender = $_POST['gender'];}
+        if (isset($_POST['approx_age'])) {$age = $_POST['approx_age'];}
+        if (isset($_POST['hair_colour'])) {$hairColour = $_POST['hair_colour'];}
+        if (isset($_POST['hair_length'])) {$hairLength = $_POST['hair_length'];}
+        if (isset($_POST['eye_colour'])) {$eyeColour = $_POST['eye_colour'];}
+        if (isset($_POST['ear_type'])) {$earType = $_POST['ear_type'];}
+        if (isset($_POST['anime'])) {$anime = $_POST['anime'];}
+        if (isset($_POST['weapons'])) {$weapons = $_POST['weapons'];}
+        if (isset($_POST['description'])) {$description = addslashes($_POST['description']);}
+
+        //Execute
+
+        $stmt->execute();
+
+        //Close the statement
+
+        $stmt->close();
+
+      } else {
+        echo "Prepared Statement Error" . $mysqli->error();
+      }
+
+    /*
     $result = "INSERT INTO characters (character_name, alias, gender, approx_age, hair_colour, hair_length, eye_colour, ear_type, anime, weapons, description) VALUES ('$name', '$alias', '$gender', '$age', '$hairColour', '$hairLength', '$eyeColour', '$earType', '$anime', '$weapons', '$description')";
 
     if (!mysqli_query($con,$result))
     {
       die('Error: ' . mysqli_error($con));
     } 
+
+    */
 
     // Post Image Data
 
