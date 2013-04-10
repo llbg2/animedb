@@ -1,5 +1,6 @@
 <?php $page = 'create_page'; ?>
 <?php require 'header.php'; ?>
+<?php require 'functions.php'; ?>
 
 <div class="container">
 

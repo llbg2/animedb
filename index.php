@@ -47,6 +47,8 @@
 
     <script>
       $("form").submit(function() {
+        $("#ajaxcontainer").hide("fast");
+        $("#ajaxcontainer").show("fast");
         $("#dvloader").show();
         $.post($(this).attr("action"), $(this).serialize(), function(html) {
             $("#ajaxcontainer").html(html, function() {

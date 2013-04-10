@@ -3,8 +3,17 @@
 	//Config
 
 	require 'config.php';
+	require 'functions.php';
 
 	//Variables
+
+
+	$scon = mysql_connect($host, $username, $password);
+	if (!$scon) {
+		die('Could not connect');
+	}
+
+	$_POST = sanitize($_POST);
 
 	$gender = $_POST['gender'];
 	$age = $_POST['approx_age'];
@@ -13,6 +22,8 @@
 	$eyeColour = $_POST['eye_colour'];
 	$earType = $_POST['ear_type'];
 	$weapons = $_POST['weapons'];
+
+	mysql_close($scon);
 
 	try {
 		// Init
