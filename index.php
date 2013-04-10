@@ -22,8 +22,8 @@
 
       <div class="row">
         <div class="span12" id="ajaxcontainer">
-            <div style="display:none; text-align:center;" id="dvloader"><img src="img/loading.gif" height="48px" width="48px" /></div>
         </div>
+        <div style="display:none; text-align:center;" id="dvloader"><img src="img/loading.gif" height="48px" width="48px" /></div>
       </div>
 
     </div> <!-- /container -->
@@ -52,17 +52,19 @@
         $("#dvloader").show();
         $.post($(this).attr("action"), $(this).serialize(), function(html) {
             $("#ajaxcontainer").html(html, function() {
-                $("#dvloader").hide();
-            });
+        });
+        $("#dvloader").hide();
         });
         return false; // prevent normal submit
       });
 
         $("#ajaxcontainer").on("click", "tr" , function(event) {
+            $("#dvloader").show();
             var xid = $(this).children(".rowid").text();
             $("#ajaxcontainer").hide("fast", function() {
                 $.post("character.php #ajax-container", { id: xid }, function(data) {
                     $("#ajaxcontainer").html(data);
+                    $("#dvloader").hide();
                     $("#ajaxcontainer").show("fast");
                 })
             })
