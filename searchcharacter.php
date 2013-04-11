@@ -33,26 +33,33 @@
 		//Query Craft
 		$query = "SELECT * FROM characters WHERE gender='$gender'";
 
-		if(!empty($age)) {
-			$query = $query . " AND approx_age='$age'";
+		if ($age != "None") {
+			if(!empty($age)) {
+				$query = $query . " AND approx_age='$age'";
+			}
 		}
+		
 
 		if(!empty($hairColour)) {
 			$query = $query . " AND hair_colour='$hairColour'";
 		}
 
-		if(!empty($hairLength)) {
-			$query = $query . " AND hair_length='$hairLength'";
+		if ($hairLength != "None") {
+			if(!empty($hairLength)) {
+				$query = $query . " AND hair_length='$hairLength'";
+			}
 		}
 
 		if(!empty($eyeColour)) {
 			$query = $query . " AND eye_colour='$eyeColour'";
 		}
 
-		if(!empty($earType)) {
-			$query = $query . " AND ear_type='$earType'";
+		if ($earType != "None") {
+			if(!empty($earType)) {
+				$query = $query . " AND ear_type='$earType'";
+			}
 		}
-
+		
 		if(!empty($weapons)) {
 			$query = $query . " AND weapons='$weapons'";
 		}
