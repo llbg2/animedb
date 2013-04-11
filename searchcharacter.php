@@ -31,7 +31,13 @@
 		$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
 		//Query Craft
-		$query = "SELECT * FROM characters WHERE gender='$gender'";
+		$query = "SELECT * FROM characters WHERE 1=1";
+
+		if ($gender != "None") {
+			if (!empty($gender)) {
+				$query = $query . " AND gender='$gender'";
+			}
+		}
 
 		if ($age != "None") {
 			if(!empty($age)) {
