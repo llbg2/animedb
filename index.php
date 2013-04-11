@@ -1,7 +1,31 @@
-    <?php $page = 'index_page'; ?>
-    <?php require 'header.php'; ?>
+    <?php
+        $page = 'index_page';
+        require 'header.php';
+        require 'config.php';
+
+        //Create Connection
+        $con = mysqli_connect($host, $username, $password, $database);
+        if (mysqli_connect_errno($con)) {
+            echo "Failed to open MYSQL Connection" . mysqli_connect_error();
+        }
+
+        $result = mysqli_fetch_row(mysqli_query($con, "SELECT COUNT(*) FROM characters"));
+        $numrows = $result['0'];
+
+        mysqli_close($con);
+    ?>
 
     <div class="container">
+
+        <div class="row" id="bigbar">
+            <div class="span6 roundbox" id="current_entries">
+                <h1 class="act-success"><?php echo $numrows; ?></h1>
+                <h4>Current Characters</h4>
+            </div>
+            <div class="span6 roundbox" id="createchar">
+                <a href="create.php"><h1 class="act-info">Create a Character</h1></a>
+            </div>
+        </div>
 
       <div class="row">
         <div class="span12" id="form">

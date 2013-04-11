@@ -11,3 +11,21 @@ table tr td a {
 #descriptiondiv {
 	text-align: justify;
 }
+
+#bigbar {
+	margin-bottom: 20px;
+}
+
+.roundbox {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; /* future proofing */
+	-khtml-border-radius: 5px; /* for old Konqueror browsers */
+
+	text-align: center;
+	background-color: #f2f2f2;
+	padding-top: 45px;
+	padding-bottom: 15px;
+
+	height: 78px;
+}
