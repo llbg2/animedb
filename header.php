@@ -28,6 +28,14 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://jasny.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://jasny.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="http://jasny.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+
+    <script src="./tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" >
+    tinyMCE.init({
+            mode : "textareas",
+            theme : "modern"
+    });
+    </script >
   </head>
 
   <body>

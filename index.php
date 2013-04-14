@@ -75,6 +75,7 @@
     <script src="./resources/bootstrap-collapse.js"></script>
     <script src="./resources/bootstrap-carousel.js"></script>
     <script src="./resources/bootstrap-typeahead.js"></script>
+    
 
     <script>
       $("form").submit(function() {

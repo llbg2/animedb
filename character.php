@@ -18,6 +18,8 @@
 		$STH->setFetchMode(PDO::FETCH_ASSOC);
 		$row = $STH->fetch();
 
+    $desc = stripslashes($row['description']);
+
 	} catch(PDOException $e) {
 		echo $e->getMessage();
 	}
@@ -58,7 +60,7 @@
     			</dl>
       	</div>
       	<div class="span9" id="descriptiondiv">
-      		<?php echo $row['description']; ?>
+      		<?php echo $desc; ?>
       	</div>
       </div>
 

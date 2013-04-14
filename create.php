@@ -17,7 +17,7 @@
       <select name="ear_type"><option>Human Ears</option><option>Cat Ears</option><option>Dog Ears</option><option>Horns</option><option>Other</option></select>
       <input type="text" name="anime" class="input-large" placeholder="Anime">
       <input type="text" name="weapons" class="input-large" placeholder="Weapons">
-      <textarea class="input-block-level" name="description" rows="16" placeholder="Character Description (Put some effort into it)" required></textarea>
+      <textarea id="area1" class="tinymce" rows="17" name="description"></textarea>
       <div class="form-actions">
         <span class="btn btn-file btn-primary">Upload an Image<input type="file" name="image" /></span>
         <button class="btn btn-block" type="submit">Submit</button>
@@ -131,29 +131,6 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./resources/jquery.js"></script>
-    <script src="./jquery.fineuploader-3.4.1.min.js"></script>
-    <script src="./resources/bootstrap-transition.js"></script>
-    <script src="./resources/bootstrap-alert.js"></script>
-    <script src="./resources/bootstrap-modal.js"></script>
-    <script src="./resources/bootstrap-dropdown.js"></script>
-    <script src="./resources/bootstrap-scrollspy.js"></script>
-    <script src="./resources/bootstrap-tab.js"></script>
-    <script src="./resources/bootstrap-tooltip.js"></script>
-    <script src="./resources/bootstrap-popover.js"></script>
-    <script src="./resources/bootstrap-button.js"></script>
-    <script src="./resources/bootstrap-collapse.js"></script>
-    <script src="./resources/bootstrap-carousel.js"></script>
-    <script src="./resources/bootstrap-typeahead.js"></script>
-
-    <script>
-      $(document).ready(function () {
-        $('#jquery-wrapped-fine-uploader').fineUploader({
-          request: {
-            endpoint: 'server/handleUploads'
-          }
-        });
-      });
-    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </body></html>
