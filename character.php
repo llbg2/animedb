@@ -45,17 +45,17 @@
       		<dl class="dl-horizontal">
     			  <dt>Gender</dt>
     			  <dd><?php echo $row['gender']; ?></dd>
-    			  <dt>Aprroximate age</dt>
+    			  <dt>Approximate Age</dt>
     			  <dd><?php echo $row['approx_age']; ?></dd>
     			  <dt>Hair Colour</dt>
     			  <dd><?php echo $row['hair_colour']; ?></dd>
-    			  <dt>Hair Lenth</dt>
+    			  <dt>Hair Length</dt>
     			  <dd><?php echo $row['hair_length']; ?></dd>
     			  <dt>Eye Colour</dt>
     			  <dd><?php echo $row['eye_colour']; ?></dd>
     			  <dt>Ear Type</dt>
     			  <dd><?php echo $row['ear_type']; ?></dd>
-    			  <dt>Weapons</dt>
+    			  <dt>Weapon(s)</dt>
     			  <dd><?php echo $row['weapons']; ?></dd>
     			</dl>
       	</div>
